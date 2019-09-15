@@ -1,0 +1,35 @@
+logging:
+  file: ./log/backend.log
+  level.: WARN
+
+banner:
+  location: banner/banner.txt
+
+server:
+  context-path: /
+
+spring:
+  application:
+    name: Backend
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      use-new-id-generator-mappings: true
+  profiles:
+    active: development
+
+security:
+  basic:
+    enabled: false
+
+management:
+  info:
+    git:
+      mode: full
+
+receipt:
+  address: Ticketline-Gasse 1a, 1010 Wien
+
+ticket:
+  check:
+    url: https://ticketline.at/tickets/check/

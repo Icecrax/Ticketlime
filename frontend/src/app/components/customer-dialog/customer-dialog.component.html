@@ -1,0 +1,56 @@
+<!-- dialog to search for, add and update customers -->
+<form #customerForm="ngForm" class="form">
+  <div class="form-group form-row">
+    <div class="col">
+      <label for="customerFirstName">First Name</label>
+      <input id="customerFirstName" type="text" name="firstName" class="form-control"
+             aria-labelledby="customer first name"
+             placeholder="Enter First Name"
+             [(ngModel)]="customerModel.firstname"
+             [required]="requiredValues"
+             #firstname='ngModel'/>
+
+      <div [hidden]="firstname.valid || firstname.pristine" class="form-text text-warning">
+        First Name is required!
+      </div>
+    </div>
+    <div class="col">
+      <label for="customerName">Name</label>
+      <input id="customerName" type="text" name="lastName" class="form-control"
+             aria-labelledby="customer last name"
+             placeholder="Enter Name"
+             [(ngModel)]="customerModel.name"
+             [required]="requiredValues"
+             #name='ngModel'/>
+      <div [hidden]="name.valid || name.pristine" class="form-text text-warning">
+        Name is required!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="customerMail">E-Mail</label>
+    <input id="customerMail" type="email" name="mail" class="form-control"
+           aria-labelledby="customer email"
+           placeholder="Enter Customer E-Mail"
+           [pattern]="(title !== 'Search Customers' ? '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' : null)"
+           [(ngModel)]="customerModel.email"
+           [required]="requiredValues"
+           #mail='ngModel'/>
+    <div [hidden]="mail.valid || mail.pristine" class="form-text text-warning">
+      A valid E-Mail address is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="customerBirthday">Birthday</label>
+    <input id="customerBirthday" type="date" name="birthday" class="form-control"
+           aria-labelledby="customer date of birth"
+           placeholder="Enter Customer Date of Birth"
+           [(ngModel)]="customerModel.birthday"
+           [required]="requiredValues"
+           #birthday='ngModel'/>
+    <div [hidden]="birthday.valid || birthday.pristine" class="form-text text-warning">
+      Valid date of birth is required!
+    </div>
+  </div>
+  <button class="btn btn-success float-right" data-dismiss="modal" (click)="customerForm.valid && onSubmit()" [disabled]="customerForm.invalid">{{title}}</button>
+</form>
