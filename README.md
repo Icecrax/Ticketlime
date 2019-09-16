@@ -28,5 +28,5 @@ Under `http://localhost:8080/swagger-ui.html` is the SwaggerUI for the documenti
 
 Under `http://localhost:8080/h2-console` is the database accessible. As a path you have to enter `jdbc:h2:file:<abolutePathToProject>/database/backend` and as username=`admin` & password=`password`
     
-**Note: On this task I worked in a team of 6 people. There are still some things on the design which weren't completely finished **
+**Note: The name is deliberately misspelled. On this task I worked in a team of 6 people. There are still some things on the design which weren't completely finished**
 
