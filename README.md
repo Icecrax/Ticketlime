@@ -1,8 +1,9 @@
 # What I learned:
 * Working with Spring Boot
 * Working with Angular and Typescript
-* Working with JUnit
+* Testing with JUnit
 * Dependency Injection
+* Building a REST API
 * Working as part of team, SCRUM development
 
 # Task:
